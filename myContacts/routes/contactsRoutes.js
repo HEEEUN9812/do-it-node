@@ -5,13 +5,16 @@ const {
     createContact,
     getContact,
     updateContact,
-    deleteContact
+    deleteContact,
+    addContctForm
 } = require("../controllers/contactController");
-
 
 router.route("/")
 .get(getAllContacts)
-.post(createContact);
+
+router.route("/add")
+.get(addContctForm)
+.post(createContact);;
 
 router.route("/:id")
 .get(getContact)
